@@ -1,0 +1,136 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #1f1f24;
+      color: white;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 40px 0;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('hero.png') center/cover;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #d2a45c;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      margin: 20px 0 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #d2a45c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .service-card {
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .gallery {
+      padding: 50px 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      height: 220px;
+    }
+
+    .advantages, .steps, .contact {
+      padding: 50px 0;
+    }
+
+    .advantages-grid,
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.03);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    form button {
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .services,
+      .gallery-grid,
+      .advantages-grid,
+      .steps-grid,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+    }
