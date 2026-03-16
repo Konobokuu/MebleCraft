@@ -152,6 +152,16 @@ form button {
   cursor: pointer;
 }
 
+.icon-card{
+  fill: #d2a45c;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+}
+
+
 /* MOBILE */
 
 @media (max-width: 900px) {
