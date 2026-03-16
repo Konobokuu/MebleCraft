@@ -4,9 +4,12 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: #1f1f24;
+  background: #121212;
   color: white;
   line-height: 1.5;
 }
@@ -179,3 +182,100 @@ form button {
     width: auto;
   }
 }
+.button {
+  position: relative;
+  width: 180px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  overflow: hidden;
+  background: rgba(201,163,93,0.12);
+  border-radius: px;
+  backdrop-filter: blur(6px);
+  transition: 0.5s ease;
+  margin: 0 auto;
+}
+
+.button span {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.button svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+}
+
+.bg-line {
+  stroke: rgba(255, 187, 59, 0.25);
+  stroke-width: 1;
+}
+
+.hl-line {
+  stroke: #C9A35D;
+  stroke-width: 2;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease;
+}
+
+.button:hover {
+  background: rgba(201,163,93,0.18);
+  box-shadow: 0 10px 30px rgba(201,163,93,0.25);
+  transform: translateY(-2px);
+}
+
+.button:hover .hl-line {
+  stroke-dashoffset: -480;
+}
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  overflow: hidden;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+/* SVG-подсветка для контура (как у кнопки) */
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(201,163,93,0.7), rgba(255,255,255,0));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.service-card:hover::before {
+  opacity: 0.5;
+  box-shadow: 0 0 20px #C9A35D, 0 0 40px #C9A35D, 0 0 60px #C9A35D;
+}
+
+/* Лёгкое свечение самой карточки */
+.service-card:hover {
+  box-shadow: 0 0 15px #C9A35D, 0 0 30px #C9A35D, 0 0 50px #C9A35D;
+  transform: translateY(-2px);
+}
+
