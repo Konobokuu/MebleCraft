@@ -14,6 +14,14 @@ body {
   background: #121212;
   color: white;
   line-height: 1.5;
+  opacity: 0;
+  animation: pageFade 1.2s ease forwards;
+}
+
+@keyframes pageFade {
+  to{
+    opacity: 1;
+  }
 }
 
 .container {
@@ -205,6 +213,13 @@ header {
 }
 
 /* ADVANTAGES - FLIP CARDS */
+.dlaczego{
+  text-align: center;
+  letter-spacing: 2px;
+  text-decoration: underline 3px solid #d2a45c;
+  text-underline-offset: 10px;
+}
+
 .advantages-grid {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -227,7 +242,7 @@ header {
 }
 
 .advantages-grid .card:hover .text-wrapper {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 
 .advantages-grid .text-front,
@@ -251,8 +266,8 @@ header {
 }
 
 .advantages-grid .text-back {
-  background: rgba(201,163,93,0.1);
-  transform: rotateY(180deg);
+  background: rgb(210, 164, 92);
+  transform: rotateX(180deg);
 }
 
 /* STEPS */
