@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MebelCraft</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
   <header>
     <div class="container">
-      <img src="./image/logo_text.png" alt="Logo MebelCraft" class="logo">
+      <img src="./image/logo_text.png" alt="logo" class="logo">
       <h1 class="hero-title">MEBLE NA WYMIAR</h1>
       <p class="hero-subtitle">Kuchnie, szafy, garderoby do Twojego wnętrza</p>
       <a href="#contact" class="button">
@@ -57,15 +58,60 @@
   </section>
 
   <section class="advantages container">
-    <h2>Dlaczego my?</h2>
-    <div class="advantages-grid">
-      <div class="card">Bezpośrednio od stolarza</div>
-      <div class="card">Indywidualny projekt</div>
-      <div class="card">Najlepsze materiały</div>
-      <div class="card">Gwarancja</div>
-    </div>
-  </section>
+  <h2>Dlaczego my?</h2>
 
+  <div class="advantages-grid">
+
+    <div class="card">
+      <div class="icon-wrap">
+      <svg class="icon-adv">
+        <use href="./image/icons.svg#icon-contact"></use>
+      </svg>
+      </div>
+      <div class="text-wrapper">
+        <div class="text-front">Bezpośrednio od stolarza</div>
+        <div class="text-back">Bez pośredników — niższa cena</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrap">
+      <svg class="icon-adv">
+        <use href="./image/icons.svg#icon-personal"></use>
+      </svg>
+      </div>
+      <div class="text-wrapper">
+        <div class="text-front">Indywidualny projekt</div>
+        <div class="text-back">Dopasowany do Twojej przestrzeni</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrap">
+      <svg class="icon-adv">
+        <use href="./image/icons.svg#icon-medal"></use>
+      </svg>
+      </div>
+      <div class="text-wrapper">
+        <div class="text-front">Najlepsze materiały</div>
+        <div class="text-back">Trwałość i jakość na lata</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrap">
+      <svg class="icon-adv">
+        <use href="./image/icons.svg#icon-shield"></use>
+      </svg>
+      </div>
+      <div class="text-wrapper">
+        <div class="text-front">Gwarancja</div>
+        <div class="text-back">1 rok gwarancji i wsparcie</div>
+      </div>
+    </div>
+
+  </div>
+</section>
   <section class="steps container">
     <h2>Jak pracujemy</h2>
     <div class="steps-grid">
@@ -87,15 +133,12 @@
         <button class="btn">Wyślij wycenę</button>
       </form>
 
-      <div class="card">
-        
-        <svg class="icon-card">
-          <use href="/image/icons.svg#icon-mail">
-        </svg>
-        <p>
-        email:
-        </p>
+      <div class="card contact-card">
+        <div class="contact-item">
+          
+        </div>
       </div>
+    </div>
     </div>
   </section>
 </body>
