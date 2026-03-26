@@ -23,13 +23,13 @@ body {
 
 /* HEADER */
 header {
+  position: relative;
   padding: 0 80px;
   text-align: center;
   min-height: 100svh;
   background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('../image/hero.png');
-  background-attachment:scroll;
   background-size: cover;
-  background-position: 0px;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -81,7 +81,6 @@ header {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
-
 .button svg {
   position: absolute;
   inset: 0;
@@ -119,15 +118,19 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
 }
 
 .service-card {
   position: relative;
   display: flex;
-  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
-  top: 120px;
   gap: 12px;
   padding: 18px;
   border-radius: 12px;
@@ -171,28 +174,30 @@ header {
 }
 
 /* GALLERY */
-.gallery,
-.advantages,
-.contact {
-  padding: 70px 0;
-}
 
-.gallery-grid,
-.advantages-grid {
-  display: grid;
+.gallery {
+  padding: 100px 0;
 }
 
 .gallery-grid {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 35px;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 220px;
+  height: 260px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 18px;
+  transition: 0.4s ease;
 }
 
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(201,163,93,.25);
+}
 /* ADVANTAGES */
 .dlaczego {
   text-align: center;
@@ -203,7 +208,7 @@ header {
 }
 
 .advantages-grid {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .advantages-grid .card {
@@ -251,6 +256,31 @@ header {
   background: rgb(210, 164, 92);
   transform: rotateX(180deg);
 }
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+  gap: 10px; /* расстояние между карточками */
+}
+
+.icon-wrap {
+  display: flex;
+  flex-direction: column; /* иконка сверху, текст снизу */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.icon-wrap:hover {
+  transform: translateY(-5px);
+}
+
+
 
 /* CONTACT */
 .contact-wrapper {
@@ -293,7 +323,7 @@ form button {
 .icon-wrap {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 12px;
@@ -363,13 +393,32 @@ form button {
     color: #ccc;
     line-height: 1.6;
 }
+@media (max-width:768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .icon-wrap {
+    margin: 25px;
+  }
+  .gallery-grid img {
+    height: 220px;
+  }
+
+  .services {
+    grid-template-columns: repeat(2,1fr);
+    bottom: 20px;
+    gap: 12px;
+  }
+}
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .services {
     grid-template-columns: 1fr;
   }
-
+    .icon-wrap {
+    margin: 25px;
+  }
   .gallery-grid,
   .advantages-grid,
   .contact-wrapper {
@@ -379,6 +428,34 @@ form button {
   .hero-title {
     font-size: 32px;
   }
+}
+@media (max-width: 768px) {
+
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  .service-card {
+    top: 92px;
+    padding: 14px 10px;
+    font-size: 14px;
+    flex-direction: column;
+    text-align: center;
+    min-height: 110px;
+    gap: 8px;
+    
+  }
+    .icon-wrap {
+    margin: 25px;
+  }
+  .icon-service {
+    width: 32px;
+    height: 32px;
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -390,7 +467,6 @@ form button {
   .logo {
     margin-top: 5%;
   }
-
   .hero-subtitle {
     font-size: 24px;
   }
@@ -438,67 +514,104 @@ form button {
   }
 }
 
-.luxury-contact-box {
-    padding: 0px 50px 50px;
-    color: white;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-.luxury-contact-box h2 {
-    font-size: 37px;
-    margin-bottom: 15px;
-    color: #d4a24c;
-    text-decoration: underline 3px solid #d4a24c;
-    text-underline-offset: 10px;
-    letter-spacing: 2px;
+.contact-modern-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0,0,0,.25);
 }
 
-.luxury-contact-box p {
-    color: #aaa;
-    font-size: 16px;
-    margin-bottom: 35px;
+.contact-modern-card h2 {
+  font-size: 32px;
+  color: #d4a24c;
+  margin-bottom: 30px;
 }
 
-.luxury-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.contact-line:last-child {
+  border-bottom: none;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(212,162,76,.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.contact-line span {
+  display: block;
+  color: #999;
+  font-size: 14px;
+}
+
+.contact-line strong {
+  font-size: 18px;
+  color: white;
+}
+@media (max-width: 768px) {
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .advantages-grid .text-wrapper {
+    height: 90px;
+  }
+
+  .process-section {
+    padding: 60px 20px;
+  }
+
+  .process-section h2 {
+    font-size: 30px;
     margin-bottom: 30px;
-}
+    text-align: center;
+  }
 
-.luxury-contact-item span {
-    font-size: 28px;
-    color: #d4a24c;
-}
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
-.luxury-contact-item strong {
-    display: block;
-    font-size: 18px;
-    color: white;
-}
+  .process-card {
+    padding: 30px 20px;
+  }
 
-.luxury-contact-item p {
-    margin: 4px 0 0;
-    color: #bbb;
-}
+  .process-card h3 {
+    font-size: 22px;
+  }
 
-.luxury-contact-box button {
-    margin-top: 25px;
-    width: fit-content;
-    padding: 15px 35px;
-    border: none;
-    border-radius: 14px;
-    background: #d4a24c;
-    color: black;
-    font-size: 17px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+  .process-card p {
+    font-size: 15px;
+  }
 
-.luxury-contact-box button:hover {
-    transform: translateY(-3px);
-    background: white;
+  .step-number {
+    font-size: 42px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 16px;
+  }
+
 }
